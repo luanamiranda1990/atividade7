@@ -1,0 +1,28 @@
+<?php 
+	// verifica se as variaveis GETS, existem...
+	if(isset($_GET['num1']) && $_GET['num2']):
+		// atribuindo valores para uma nova variavel...
+		$num1 = $_GET['num1'];
+		$num2 = pow($_GET['num2'], 2);
+
+		$calcula = $num1 / $num2; // realizando calculo....
+
+		// verificando e passando mensagem para cada valor verificado...
+		if($calcula <= 17):
+			echo '<div class="alert alert-warning">Abaixo de 17 - Muito abaixo do pesoo</div>';
+
+		elseif($calcula > 17 && $calcula <= 18.49):
+			echo '<div class="alert alert-warning">Entre 17 e 18,49 - Abaixo do peso</div>';
+
+		elseif($calcula >= 18.5 && $calcula <= 24.99):
+			echo '<div class="alert alert-success">Entre 18,5 e 24,99 - Peso normal</div>';					
+		
+		elseif($calcula >= 25 && $calcula <= 29.99):
+			echo '<div class="alert alert-danger">Entre 25 e 29,99 - Acima do peso</div>';
+
+		elseif($calcula >= 30 ):
+			echo '<div class="alert alert-danger">Entre 30 e 34,99 - Obesidade I</div>';
+		endif;
+
+	endif;
+?>
